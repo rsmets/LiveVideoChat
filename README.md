@@ -23,3 +23,9 @@ Live video avatar chat application. Connects to an Eliza instance running the "D
 You can update [main.tsx](/src/main.tsx)'s `SIMLI_FACE_ID` and `ELEVENLABS_VOICE_ID` to control the avatar and voice used respectively.
 
 The port the application runs on can be updated in the [vite.config](/vite.config.ts).
+
+## Demo
+
+This demonstration was put together within an hour. Lots of room for improvement. Click image to view video on YouTube.
+
+[![Watch the video demo](https://img.youtube.com/vi/TUoy8fXqdGE/0.jpg)](https://www.youtube.com/watch?v=TUoy8fXqdGE)
