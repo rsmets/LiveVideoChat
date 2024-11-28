@@ -12,9 +12,30 @@ const completionEndpoint = import.meta.env?.VITE_COMPLETION_ENDPOINT || 'http://
 
 import './styles.css'
 
-const AGENT_ID = 'ruby' // this comes from the agentId output from running the Eliza framework, it likely will be in uuid format, i.e. '123e4567-e89b-12d3-a456-426614174000'
-const SIMLI_FACE_ID = '13fbb3e1-4489-4199-ad57-91be4a2dd38b'
-const ELEVENLABS_VOICE_ID = '21m00Tcm4TlvDq8ikWAM'
+const characters = {
+  trump: {
+    AGENT_ID: 'trump',
+    SIMLI_FACE_ID: '0adbfb8b-ab1b-4578-966d-dbcdaef48a1b',
+    ELEVENLABS_VOICE_ID: '8KO3tRwWW8UnGbvwln1f',
+  },
+  santa: {
+    AGENT_ID: 'santa',
+    SIMLI_FACE_ID: 'e457b4e7-95f7-48d7-ae8a-fb9a75d69eab',
+    ELEVENLABS_VOICE_ID: '8KO3tRwWW8UnGbvwln1f',
+  },
+  mary: {
+    AGENT_ID: 'mary',
+    SIMLI_FACE_ID: '9e5dbe54-22d8-41a3-a787-e9543837bc87',
+    ELEVENLABS_VOICE_ID: 'qDQlPlj1YoXvDKqdcE7V',
+  },
+  ray: {
+    AGENT_ID: 'ray',
+    SIMLI_FACE_ID: 'f9c854c6-0557-4dd3-87d0-cd2250ae3d66',
+    ELEVENLABS_VOICE_ID: 'qDQlPlj1YoXvDKqdcE7V',
+  },
+}
+
+const { AGENT_ID, SIMLI_FACE_ID, ELEVENLABS_VOICE_ID } = characters.santa
 
 const simliClient = new SimliClient()
 
@@ -129,7 +150,7 @@ const App = () => {
     cancelTokenRef.current = axios.CancelToken.source()
 
     try {
-      console.log('sending input to chatgpt')
+      console.log('sending input to eliza')
       const chatGPTResponse = await axios.post(
         completionEndpoint + `/${AGENT_ID}/message`,
         {
@@ -156,7 +177,7 @@ const App = () => {
         `https://api.elevenlabs.io/v1/text-to-speech/${ELEVENLABS_VOICE_ID}?output_format=pcm_16000`,
         {
           text: chatGPTText,
-          model_id: 'eleven_turbo_v2_5',
+          model_id: 'eleven_turbo_v2_5', //'eleven_multilingual_v2',
         },
         {
           headers: {
