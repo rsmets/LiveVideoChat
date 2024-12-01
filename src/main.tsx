@@ -15,8 +15,8 @@ import './styles.css'
 const characters = {
   trump: {
     AGENT_ID: 'trump',
-    SIMLI_FACE_ID: '0adbfb8b-ab1b-4578-966d-dbcdaef48a1b',
-    ELEVENLABS_VOICE_ID: '8KO3tRwWW8UnGbvwln1f',
+    SIMLI_FACE_ID: 'd7543804-646c-453e-a1a2-147a764411f8',
+    ELEVENLABS_VOICE_ID: 'q30ttNNZeLiWCWquyZA1', //'8KO3tRwWW8UnGbvwln1f',
   },
   santa: {
     AGENT_ID: 'santa',
@@ -31,11 +31,11 @@ const characters = {
   ray: {
     AGENT_ID: 'ray',
     SIMLI_FACE_ID: 'f9c854c6-0557-4dd3-87d0-cd2250ae3d66',
-    ELEVENLABS_VOICE_ID: 'qDQlPlj1YoXvDKqdcE7V',
+    ELEVENLABS_VOICE_ID: 'BmibaO3W2Z27dlZWhX1n',
   },
 }
 
-const { AGENT_ID, SIMLI_FACE_ID, ELEVENLABS_VOICE_ID } = characters.santa
+const { AGENT_ID, SIMLI_FACE_ID, ELEVENLABS_VOICE_ID } = characters.ray
 
 const simliClient = new SimliClient()
 
@@ -177,7 +177,7 @@ const App = () => {
         `https://api.elevenlabs.io/v1/text-to-speech/${ELEVENLABS_VOICE_ID}?output_format=pcm_16000`,
         {
           text: chatGPTText,
-          model_id: 'eleven_turbo_v2_5', //'eleven_multilingual_v2',
+          model_id: 'eleven_multilingual_v2', //'eleven_turbo_v2_5', //'eleven_multilingual_v2',
         },
         {
           headers: {
