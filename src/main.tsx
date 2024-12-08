@@ -16,10 +16,10 @@ const characters = {
   trump: {
     AGENT_ID: 'trump',
     SIMLI_FACE_ID: 'd7543804-646c-453e-a1a2-147a764411f8',
-    ELEVENLABS_VOICE_ID: 'q30ttNNZeLiWCWquyZA1', //'8KO3tRwWW8UnGbvwln1f',
+    ELEVENLABS_VOICE_ID: '8KO3tRwWW8UnGbvwln1f', //'8KO3tRwWW8UnGbvwln1f',
   },
   santa: {
-    AGENT_ID: 'santa',
+    AGENT_ID: 'naughty_santa',
     SIMLI_FACE_ID: 'e457b4e7-95f7-48d7-ae8a-fb9a75d69eab',
     ELEVENLABS_VOICE_ID: '8KO3tRwWW8UnGbvwln1f',
   },
@@ -35,7 +35,7 @@ const characters = {
   },
 }
 
-const { AGENT_ID, SIMLI_FACE_ID, ELEVENLABS_VOICE_ID } = characters.ray
+const { AGENT_ID, SIMLI_FACE_ID, ELEVENLABS_VOICE_ID } = characters.santa
 
 const simliClient = new SimliClient()
 
